@@ -1,30 +1,30 @@
-# Política de Privacidade - Agente B1N0
+# Política de Privacidade - Agente B1N0 (Robótica Paraná)
 
 **Última atualização:** 9 de abril de 2026
 
-Esta Política de Privacidade descreve como a extensão **Agente B1N0 - Logs Educacionais** coleta, utiliza e protege as informações dos usuários.
+Esta Política de Privacidade descreve como a extensão **Agente B1N0**, vinculada ao programa **Robótica Paraná** da **Secretaria de Estado da Educação do Paraná (SEED-PR)**, coleta e trata informações dos usuários.
 
 ---
 
-### 1. Escopo e Propósito
-O **Agente B1N0** é uma ferramenta de apoio pedagógico desenvolvida para registrar logs de atividades de programação (uploads de código) nas plataformas **Arduino Cloud** e **mBlock**. Seu propósito é facilitar a gestão de sala de aula e o diagnóstico de hardware.
+### 1. Finalidade Institucional
+O **Agente B1N0** é uma ferramenta de monitoramento técnico e pedagógico. Seu objetivo único é gerar estatísticas de uso dos kits de robótica nas escolas da rede estadual do Paraná, auxiliando na gestão de recursos e no acompanhamento das atividades de programação nas plataformas Arduino Cloud e mBlock.
 
-### 2. Dados Coletados e Finalidade
-Para cumprir sua função, a extensão coleta:
-* **Informações de Conexão:** Endereço IP e região aproximada (via API ipapi.co) para identificação da estação de trabalho no laboratório.
-* **Atividade do Usuário:** Registro de cliques nos botões de "Upload" e detecção do modelo de placa de hardware utilizada.
-* **Logs Técnicos:** Data, hora e status dos envios de código.
+### 2. Dados Coletados
+Para fins de estatística e auditoria da rede de ensino, a extensão coleta:
+* **Identificação da Estação:** Endereço IP local e região, utilizados para mapear o uso por laboratório e unidade escolar.
+* **Atividade Técnica:** Registro de cliques no botão "Upload" e detecção do modelo de placa (hardware) utilizada.
+* **Logs de Sistema:** Data, hora e status (sucesso/falha) do envio de códigos para os componentes robóticos.
 
-### 3. Armazenamento de Dados
-* **Armazenamento Local:** Todos os logs são salvos exclusivamente no navegador do usuário (`chrome.storage.local`).
-* **Privacidade:** A extensão **não** envia dados para servidores externos para armazenamento ou processamento.
+### 3. Armazenamento e Segurança
+* **Fase de Testes:** Atualmente, os logs são armazenados exclusivamente de forma local no navegador (`chrome.storage.local`).
+* **Privacidade do Código:** A extensão **não** acessa, lê ou armazena o conteúdo dos códigos-fonte desenvolvidos pelos alunos ou professores.
+* **Segurança:** A comunicação com APIs de rede é feita via HTTPS criptografado.
 
 ### 4. Compartilhamento de Dados
-* **Não comercialização:** Não vendemos ou compartilhamos dados com terceiros para fins publicitários ou comerciais.
-* **Uso Restrito:** Os dados servem apenas para a funcionalidade de histórico da própria extensão.
+Os dados coletados têm finalidade estritamente administrativa e educacional da **SEED-PR**. Não há comercialização, compartilhamento com terceiros para fins publicitários ou uso de dados para qualquer fim não relacionado ao programa Robótica Paraná.
 
 ### 5. Contato
-Esta é uma ferramenta de código aberto voltada para fins educacionais.
+Esta ferramenta é desenvolvida para apoio à rede pública de ensino do Estado do Paraná.
 
 ---
-*Publicado para conformidade com a Chrome Web Store.*
+*Documento em conformidade com as Políticas de Programa para Desenvolvedores da Chrome Web Store.*
