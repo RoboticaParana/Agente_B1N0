@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Agente B1N0 - Logs Educacionais",
+  "name": "Agente B1N0 - Robótica Paraná",
   "version": "1.0.0",
   "description": "Registra logs de uploads para Arduino Cloud e mBlock com identificação local de estação.",
   "permissions": [
