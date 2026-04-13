@@ -1,30 +1,33 @@
-# Política de Privacidade - Agente B1N0 (Robótica Paraná)
+# Política de Privacidade - Agente B1N0 (SEED-PR)
 
-**Última atualização:** 9 de abril de 2026
+## 1. Visão Geral
+Esta Política de Privacidade descreve como a extensão **Agente B1N0** coleta, processa e armazena dados. Esta ferramenta foi desenvolvida para uso exclusivo institucional no âmbito do programa Robótica Paraná, da **Secretaria de Estado da Educação do Paraná (SEED-PR)**.
 
-Esta Política de Privacidade descreve como a extensão **Agente B1N0**, vinculada ao programa **Robótica Paraná** da **Secretaria de Estado da Educação do Paraná (SEED-PR)**, coleta e trata informações dos usuários.
+## 2. Coleta de Dados e Telemetria
+Para fins de auditoria pedagógica e gestão de ativos tecnológicos, a extensão coleta os seguintes metadados técnicos:
+
+* **Identificação do Dispositivo:** Número de série de patrimônio (em Chromebooks gerenciados) ou um identificador único (ID) gerado aleatoriamente e armazenado localmente (Windows/Linux).
+* **Logs de Atividade:** Registro do momento exato (timestamp) de cliques nos botões de "Upload" e "Atualização de Firmware" nas IDEs *Arduino Cloud* e *mBlock Web*.
+* **Informações de Hardware:** Identificação do modelo da placa de robótica conectada (ex: Arduino Uno, ESP32, mBot).
+* **Identificação de Rede:** Endereço IP local e público, utilizado estritamente para associar a atividade à unidade escolar correspondente.
+
+## 3. Minimização de Dados e Privacidade
+Em conformidade com as boas práticas de proteção de dados:
+* **NÃO** coletamos informações de identificação pessoal (PII) como nomes, e-mails ou CPFs.
+* **NÃO** coletamos o conteúdo do código-fonte ou projetos desenvolvidos pelos usuários.
+* **NÃO** acessamos o histórico de navegação ou dados de outros websites.
+
+## 4. Finalidade e Uso
+Os dados coletados destinam-se exclusivamente a:
+1. Monitorar a frequência e o volume de uso dos kits de robótica na rede estadual.
+2. Gerar relatórios estatísticos para apoio pedagógico e tomada de decisão da SEED-PR.
+3. Validar a distribuição e a eficiência dos recursos tecnológicos nas escolas.
+
+## 5. Transferência e Armazenamento
+Os metadados são transmitidos via protocolo seguro **HTTPS** para um endpoint privado (Google Apps Script) hospedado no ecossistema **Google Workspace for Education** da SEED-PR. Os dados são organizados em planilhas institucionais e não são compartilhados com terceiros ou utilizados para fins publicitários.
+
+## 6. Consentimento e Governança
+Ao utilizar as estações de trabalho da rede estadual com a extensão instalada, o uso de telemetria técnica é aplicado conforme as diretrizes de governança de TI da SEED-PR para monitoramento de ativos públicos.
 
 ---
-
-### 1. Finalidade Institucional
-O **Agente B1N0** é uma ferramenta de monitoramento técnico e pedagógico. Seu objetivo único é gerar estatísticas de uso dos kits de robótica nas escolas da rede estadual do Paraná, auxiliando na gestão de recursos e no acompanhamento das atividades de programação nas plataformas Arduino Cloud e mBlock.
-
-### 2. Dados Coletados
-Para fins de estatística e auditoria da rede de ensino, a extensão coleta:
-* **Identificação da Estação:** Endereço IP local e região, utilizados para mapear o uso por laboratório e unidade escolar.
-* **Atividade Técnica:** Registro de cliques no botão "Upload" e detecção do modelo de placa (hardware) utilizada.
-* **Logs de Sistema:** Data, hora e status (sucesso/falha) do envio de códigos para os componentes robóticos.
-
-### 3. Armazenamento e Segurança
-* **Fase de Testes:** Atualmente, os logs são armazenados exclusivamente de forma local no navegador (`chrome.storage.local`).
-* **Privacidade do Código:** A extensão **não** acessa, lê ou armazena o conteúdo dos códigos-fonte desenvolvidos pelos alunos ou professores.
-* **Segurança:** A comunicação com APIs de rede é feita via HTTPS criptografado.
-
-### 4. Compartilhamento de Dados
-Os dados coletados têm finalidade estritamente administrativa e educacional da **SEED-PR**. Não há comercialização, compartilhamento com terceiros para fins publicitários ou uso de dados para qualquer fim não relacionado ao programa Robótica Paraná.
-
-### 5. Contato
-Esta ferramenta é desenvolvida para apoio à rede pública de ensino do Estado do Paraná.
-
----
-*Documento em conformidade com as Políticas de Programa para Desenvolvedores da Chrome Web Store.*
+*Última atualização: Abril de 2026*
