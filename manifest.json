@@ -1,15 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Agente B1N0 - Robótica Paraná",
-  "version": "1.0.0",
-  "description": "Registra logs de uploads para Arduino Cloud e mBlock com identificação local de estação.",
+  "name": "Agente B1N0 - Robótica Paraná (SEED-PR)",
+  "version": "3.2.1",
+  "description": "Monitoramento institucional de kits de robótica para a rede SEED-PR.",
   "permissions": [
-    "storage"
+    "storage", 
+    "enterprise.deviceAttributes"
   ],
   "host_permissions": [
-    "https://ipapi.co/*",
+    "https://api.ipify.org/*",
     "https://app.arduino.cc/*",
-    "https://ide.mblock.cc/*"
+    "https://ide.mblock.cc/*",
+    "https://script.google.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -24,17 +26,17 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": [
-        "https://app.arduino.cc/*",
+        "https://app.arduino.cc/*", 
         "https://ide.mblock.cc/*"
       ],
-      "js": ["content.js"],
+      "js": ["config.js", "content.js"],
       "run_at": "document_end"
     }
-  ],
-  "background": {
-    "service_worker": "background.js"
-  }
+  ]
 }

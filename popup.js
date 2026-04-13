@@ -1,33 +1,25 @@
-function render() {
+function atualizarPopup() {
+  // Obtém a versão diretamente do manifest.json
+  const manifestData = chrome.runtime.getManifest();
+  document.getElementById('versaoAgente').innerText = `v${manifestData.version}`;
+
   chrome.storage.local.get({ logs: [] }, (res) => {
-    const div = document.getElementById('lista');
-    if (!res.logs || res.logs.length === 0) {
-      div.innerHTML = "<p style='text-align:center; color:#999;'>Sem atividades registadas.</p>";
+    const container = document.getElementById('logContainer');
+    if (res.logs.length === 0) {
+      container.innerHTML = "<p style='font-size:12px;'>Nenhum log registrado ainda.</p>";
       return;
     }
 
-    div.innerHTML = res.logs.slice().reverse().map(l => {
-      const isMblock = l.evento.includes("mBlock");
-      return `
-        <div class="card ${isMblock ? 'mblock' : ''}">
-          <div class="meta">
-            <span class="time">${l.data.split(' ')[1]}</span>
-            <span class="placa">${l.placa}</span>
-          </div>
-          <span class="info"><b>Sistema:</b> ${l.evento}</span>
-          <span class="info"><b>IP:</b> ${l.ip}</span>
-          <span class="info"><b>Local:</b> ${l.local}</span>
-        </div>
-      `;
-    }).join('');
+    container.innerHTML = res.logs.reverse().map(log => `
+      <div class="log-item">
+        <span class="data">${log.data}</span>
+        <span class="evento">${log.evento}</span>
+        Placa: <span class="placa">${log.placa}</span><br>
+        ID: <strong>${log.serial}</strong>
+        <div class="ips">IP Pub: ${log.ip_publico} | Local: ${log.ip_local}</div>
+      </div>
+    `).join('');
   });
 }
 
-document.getElementById('btnLimpar').addEventListener('click', () => {
-  if (confirm("Apagar todo o histórico?")) {
-    chrome.storage.local.set({ logs: [] }, render);
-  }
-});
-
-document.addEventListener('DOMContentLoaded', render);
-setInterval(render, 2000);
+document.addEventListener('DOMContentLoaded', atualizarPopup);
